@@ -3,14 +3,14 @@ pipeline {
 agent {
 label {
 		label "built-in"
-		customWorkspace "/data/project-myapp"
+		customWorkspace "/mnt/project-myapp"
 		
 		}
 		}
 		
 	stages {
 		
-		stage ('CLEAN_OLD_M2') {
+		/*stage ('CLEAN_OLD_M2') {
 			
 			steps {
 				sh "rm -rf /home/saccount/.m2/repository"
@@ -42,6 +42,14 @@ label {
 	
 	
 	
-	}
+	}*/
+		stage ('project-file'){
+			steps {
+				sh "cd /mnt/project-myapp"
+				sh "mvn clean install"
+				sh "cp -r /target/LoginWebApp.war /mnt/server/apache-tomcat-9.0.93/webapps"
+				sh "/mnt/server/apache-tomcat-9.0.93/bin/ ./startup.sh"
+			}
+		}
 		
 }
