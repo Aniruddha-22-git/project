@@ -45,7 +45,7 @@ label {
 	}*/
 		stage ('maven-installation'){
 			steps {
-				sh "apt-get install maven -y"
+				sh "sudo apt-get install maven -y"
 			}
 		}
 		stage ('project-file'){
