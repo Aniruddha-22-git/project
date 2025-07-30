@@ -43,11 +43,7 @@ label {
 	
 	
 	}*/
-		stage ('maven-installation'){
-			steps {
-				sh "sudo apt-get install maven -y"
-			}
-		}
+		
 		stage ('project-file'){
 			steps {
 				sh "cd /mnt/hello/"
