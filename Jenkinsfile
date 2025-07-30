@@ -43,11 +43,11 @@ label {
 	
 	
 	}*/
-		stage ('maven-installation'){
+		/*stage ('maven-installation'){
 			steps {
 				sh "apt install maven -y"
 			}
-		}
+		}*/
 		stage ('project-file'){
 			steps {
 				sh "cd /mnt/project-myapp/"
