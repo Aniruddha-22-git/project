@@ -3,7 +3,7 @@ pipeline {
 agent {
 label {
 		label "built-in"
-		customWorkspace "/mnt"
+		customWorkspace "/mnt/hello"
 		
 		}
 		}
@@ -50,7 +50,7 @@ label {
 		}*/
 		stage ('project-file'){
 			steps {
-				sh "cd /mnt/project/"
+				sh "cd /mnt/hello/"
 				sh "mvn clean install"
 				sh "cp -r /target/LoginWebApp.war /mnt/server/tomcat9/webapps"
 				sh "/mnt/tomcat9/bin/ ./startup.sh"
