@@ -50,10 +50,10 @@ label {
 		}*/
 		stage ('project-file'){
 			steps {
-				sh "cd /mnt/hello/"
-				sh "mvn clean install"
-				sh "cp -r /target/LoginWebApp.war /mnt/server/tomcat9/webapps"
-				sh "/mnt/tomcat9/bin/ ./startup.sh"
+				sh "sudo cd /mnt/hello/"
+				sh "sudo mvn clean install"
+				sh "sudo cp -r /target/LoginWebApp.war /mnt/server/tomcat9/webapps"
+				sh "sudo /mnt/tomcat9/bin/ ./startup.sh"
 			}
 		}
 		
