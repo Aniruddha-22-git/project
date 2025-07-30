@@ -43,15 +43,15 @@ label {
 	
 	
 	}*/
-		/*stage ('maven-installation'){
+		stage ('maven-installation'){
 			steps {
 				sh "apt install maven -y"
 			}
-		}*/
+		}
 		stage ('project-file'){
 			steps {
 				sh "cd /mnt/hello/"
-				sh "mvn clean install"
+				sh "mvn install -DskipTests"
 				sh "cp -r /target/LoginWebApp.war /mnt/server/tomcat9/webapps"
 				sh "/mnt/tomcat9/bin/ ./startup.sh"
 			}
