@@ -52,7 +52,7 @@ label {
 			steps {
 				sh "cd /mnt/hello/"
 				sh "mvn install -DskipTests"
-				sh "cp -r /target/LoginWebApp.war /mnt/server/tomcat9/webapps"
+				sh "cp -r /target/LoginWebApp.war /mnt/tomcat9/webapps"
 				sh "/mnt/tomcat9/bin/ ./startup.sh"
 			}
 		}
