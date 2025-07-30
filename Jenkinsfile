@@ -47,8 +47,8 @@ label {
 			steps {
 				sh "cd /mnt/project-myapp"
 				sh "mvn clean install"
-				sh "cp -r /target/LoginWebApp.war /mnt/server/apache-tomcat-9.0.93/webapps"
-				sh "/mnt/server/apache-tomcat-9.0.93/bin/ ./startup.sh"
+				sh "cp -r /target/LoginWebApp.war /mnt/server/tomcat9/webapps"
+				sh "/mnt/tomcat9/bin/ ./startup.sh"
 			}
 		}
 		
